@@ -85,8 +85,8 @@ if something does not work, look  in the log.
     ### **WORK IN PROGRESS**
 -->
 ### 0.6.3 (2026-02-04)
-* (manni-2x) Refactoring using modules, flow-controll using WebSocket Status, 
-  restart of Adapter with variable timeout in settings
+* (marian-t-web-de alias manni-2x) Refactoring using modules, flow-controll
+* using WebSocket Status, restart of Adapter with variable timeout in settings
   
 ### 0.6.2 (2024-12-01)
 * (marian-t-web-de) Reconect after Error connecting to Samsung HJ Series TV
