@@ -31,12 +31,51 @@ Choose your API:
 	Samsung2016 - selfexplaining 
 	SamsungTV - Tizen TVs after 2016 
 
+# ioBroker.samsung (modulare Version)
 
+Ein vollständig überarbeiteter, modularer ioBroker‑Adapter zur Steuerung von Samsung‑Fernsehern.  
+Unterstützt mehrere API‑Typen (H/J‑Series, 2016‑Modelle, SamsungTV, Legacy) und bietet eine robuste, asynchrone Architektur.
+
+---
+
+## 🚀 Features
+
+- **Modulare Clean‑Architecture**
+- **Stabile WebSocket‑Verbindung** für H/J‑Series
+- **Ping‑basierte Power‑Erkennung**
+- **Reconnect‑Mechanismus ohne Fehlversuche**
+- **Unterstützte API‑Typen:**
+  - Samsung H/J Series (WebSocket)
+  - Samsung 2016 API
+  - SamsungTV (Token‑basiert)
+  - Samsung Legacy (samsung‑remote)
+- **Saubere Trennung von Logik & Adapter‑Core**
+- **Keine Race‑Conditions**
+- **Node.js 20 kompatibel**
+
+---
+
+#### 📦 Unterstützte API‑Typen
+
+| API‑Typ | Beschreibung | Controller |
+|--------|--------------|------------|
+| `SamsungHJ` | Moderne H/J‑Series TVs (WebSocket) | `SamsungHJController` |
+| `Samsung2016` | 2016er Modelle | `Samsung2016Controller` |
+| `SamsungTV` | Token‑basierte API | `SamsungTVController` |
+| `Legacy` | Alte Modelle via `samsung-remote` | `SamsungLegacyController` |
+
+Die Auswahl erfolgt in der Instanzkonfiguration.
+
+---
+
+#### 🧩 Architektur
+
+Der Adapter wurde vollständig modularisiert:
 
 #### Requirements
 Samsung TV<br>
 HJ Series tested by me on UE55HU7200 (v.0.5.0 only), 
-again 2024 on UE55HJ8590 (v.0.6.1)
+again 2024 on UE55HJ8590 (v.0.6.1 and above)
 Support for devices since 2016  experimental
 if something does not work, look  in the log.
 
