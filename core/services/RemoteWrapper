@@ -1,0 +1,35 @@
+'use strict';
+
+class RemoteWrapper {
+    constructor(adapter) {
+        this.adapter = adapter;
+        this.remote = null;
+        this.reconnectFn = null;
+    }
+
+    setRemote(remoteHJ) {
+        this.remote = remoteHJ;
+    }
+
+    isConnected() {
+        return !!this.remote;
+    }
+
+    triggerReconnect() {
+        if (this.reconnectFn) this.reconnectFn();
+    }
+
+    setReconnectHandler(fn) {
+        this.reconnectFn = fn;
+    }
+
+    send(cmd) {
+        if (!this.remote) {
+            this.adapter.log.debug('RemoteWrapper: no remote available');
+            return;
+        }
+        this.remote.sendKey(cmd);
+    }
+}
+
+module.exports = RemoteWrapper;
