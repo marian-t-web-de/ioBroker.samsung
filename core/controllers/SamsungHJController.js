@@ -34,7 +34,7 @@ class SamsungHJController {
         if (!this.initialConnectDelayDone) {
             this.initialConnectDelayDone = true;
             this.adapter.log.debug('SamsungHJ: delaying initial connect by 8 seconds...');
-            let delay = adapter.config.delay ?? 8000;
+            const delay = this.adapter.config.delay || 8000;
             setTimeout(() => this.init(), delay);   // oder adapter.config.delay
             return;
         }
