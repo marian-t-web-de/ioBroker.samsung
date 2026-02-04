@@ -13,7 +13,7 @@
 
 **Important note for windows users: This adapter requires git to be installed systemwide**
 
-#### Description
+### Description
 
 Adapter for Samsung TVs
 
@@ -21,7 +21,7 @@ Adapter for Samsung TVs
 This adapter was initialy created by @soef at https://github.com/soef/ioBroker.samsung but not maintained any more, so we moved it to iobroker-community so that bugs could be fixed. thanks @soef for his work.
 Adapter was extended by jogibear9988 and mwp007 with further Api since then.
 
-#### Configuration
+### Configuration
 Enter the IP of your Samsung TV.
 Choose your API:
 	Samsung Remote - TVs before 2014
@@ -31,14 +31,14 @@ Choose your API:
 	Samsung2016 - selfexplaining 
 	SamsungTV - Tizen TVs after 2016 
 
-# ioBroker.samsung (modulare Version)
+### ioBroker.samsung (modulare Version)
 
 Ein vollständig überarbeiteter, modularer ioBroker‑Adapter zur Steuerung von Samsung‑Fernsehern.  
 Unterstützt mehrere API‑Typen (H/J‑Series, 2016‑Modelle, SamsungTV, Legacy) und bietet eine robuste, asynchrone Architektur.
 
 ---
 
-## 🚀 Features
+### 🚀 Features
 
 - **Modulare Clean‑Architecture**
 - **Stabile WebSocket‑Verbindung** für H/J‑Series
@@ -55,7 +55,7 @@ Unterstützt mehrere API‑Typen (H/J‑Series, 2016‑Modelle, SamsungTV, Legac
 
 ---
 
-#### 📦 Unterstützte API‑Typen
+### 📦 Unterstützte API‑Typen
 
 | API‑Typ | Beschreibung | Controller |
 |--------|--------------|------------|
@@ -68,22 +68,26 @@ Die Auswahl erfolgt in der Instanzkonfiguration.
 
 ---
 
-#### 🧩 Architektur
+### 🧩 Architektur
 
 Der Adapter wurde vollständig modularisiert:
 
-#### Requirements
+### Requirements
 Samsung TV<br>
 HJ Series tested by me on UE55HU7200 (v.0.5.0 only), 
 again 2024 on UE55HJ8590 (v.0.6.1 and above)
 Support for devices since 2016  experimental
 if something does not work, look  in the log.
 
-## Changelog
+### Changelog
 <!--
 	Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
+### 0.6.3 (2026-02-04)
+* (manni-2x) Refactoring using modules, flow-controll using WebSocket Status, 
+  restart of Adapter with variable timeout in settings
+  
 ### 0.6.2 (2024-12-01)
 * (marian-t-web-de) Reconect after Error connecting to Samsung HJ Series TV
 
