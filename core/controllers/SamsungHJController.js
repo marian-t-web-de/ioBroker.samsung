@@ -30,9 +30,12 @@ class SamsungHJController {
     async init() {
         if (this.connecting || this.connected) return;
 
-        const reachable = await PingService.isReachable(this.adapter.config.ip);
-        if (!reachable) {
-            this.adapter.log.debug('SamsungHJ: TV unreachable → skipping connect');
+        // Initialer Delay NUR beim ersten Versuch nach Power-On
+        if (!this.initialConnectDelayDone) {
+            this.initialConnectDelayDone = true;
+            this.adapter.log.debug('SamsungHJ: delaying initial connect by 8 seconds...');
+            let delay = adapter.config.delay ?? 8000;
+            setTimeout(() => this.init(), delay);   // oder adapter.config.delay
             return;
         }
 
